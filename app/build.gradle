@@ -23,8 +23,10 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     // added by guenekad (build.gradle)
-    implementation 'com.indvd00m.ascii.render:ascii-render:2.2.0'
     implementation 'org.fusesource.jansi:jansi:2.4.1'
+
+
+    implementation 'com.indvd00m.ascii.render:ascii-render:2.2.0'
 
 
 }
