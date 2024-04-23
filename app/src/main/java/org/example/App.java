@@ -7,6 +7,10 @@ package org.example;
 
 import org.fusesource.jansi.AnsiConsole;
 
+import com.indvd00m.ascii.render.Render;
+import com.indvd00m.ascii.render.api.ICanvas;
+import com.indvd00m.ascii.render.api.IContextBuilder;
+import com.indvd00m.ascii.render.elements.PseudoText;
 
 import static org.fusesource.jansi.Ansi.*;
 import static org.fusesource.jansi.Ansi.Color.*;
@@ -17,11 +21,11 @@ public class App {
     }
 
     public static void main(String[] args) {
-        // Initialisieren von Jansi
+         // Initialisieren von Jansi
         AnsiConsole.systemInstall();
 
         // Beispiel für die Verwendung von Jansi
-        System.out.println(ansi().fg(YELLOW).a("Hallo").fgBright(GREEN).a(" Welt,").reset());
+       System.out.println(ansi().fg(YELLOW).a("Hallo").fgBright(GREEN).a(" Welt,").reset());
 
         System.out.println(
             ansi().fgBright(BLUE).a("DevOps").reset().toString() +
@@ -64,15 +68,15 @@ public class App {
         System.out.println(ansi().fg(WHITE).a("Dies ist ein Pseudotext ohne Farbe.").fgBright(GREEN).a(" Oder auch nicht.").reset());
 
         // Deinstallieren von Jansi
-        AnsiConsole.systemUninstall();
+        AnsiConsole.systemUninstall(); 
 
-    //    Render render = (Render) new Render();
-	//	IContextBuilder builder = (IContextBuilder) render.newBuilder();
-	//	((IContextBuilder) builder.width(120)).height(20);
-	//	builder.element(new PseudoText("PseudoText"));
-	//	ICanvas canvas = render.render(builder.build());
-	//	String s = canvas.getText();
-	//	System.out.println(s);
+        Render render = (Render) new Render();
+		IContextBuilder builder = (IContextBuilder) render.newBuilder();
+		((IContextBuilder) builder.width(120)).height(20);
+		builder.element(new PseudoText("PseudoText"));
+		ICanvas canvas = render.render(builder.build());
+		String s = canvas.getText();
+		System.out.println(s);
     
         }
 
